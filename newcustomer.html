@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>TV Repair Form</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+<body>
+    <div id="newCusForm">
+    <form name="newCusForm">
+        <label for="name">Name of Customer:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>        
+               
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="number" name="number" required>
+
+        <label for="model">Model Number of TV:</label>
+        <input type="text" id="model" name="model" required>
+        
+        <label for="description">Description of Problem:</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="items">Items Included in Drop-off:</label>
+        <input type="text" id="items" name="items">
+        
+        <button type="submit" id="newsubmit">Submit</button>
+    </form>
+    </div>
+    
+    <div>
+        <a href="index.html">Home</a>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxomluCtXA4men1IK8uHFMy3IGBPwdTIQUEVGtYsqNdLy1C0rS6E0UQ2pJp1zi7OD-Shg/exec'
+        const form = document.forms['newCusForm']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              if (response.ok) {
+                alert("Form submitted successfully!");
+                form.reset();
+              } else {
+                alert("Error submitting form. Please try again later.");
+              }
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

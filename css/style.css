@@ -1,0 +1,35 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#newCusForm, #oldCusForm{
+  padding:4px 2px;
+  border:solid 1px #02456b;
+  width:260px;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
