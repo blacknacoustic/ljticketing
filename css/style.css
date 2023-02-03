@@ -11,7 +11,7 @@
 /* LAYOUT
 /*******************************************/
 
-#newCusForm, #oldCusForm{
+#newCusForm, #oldCusForm, div{
   padding:4px 2px;
   border:solid 1px #02456b;
   width:260px;
