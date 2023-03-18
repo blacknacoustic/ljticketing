@@ -13,7 +13,7 @@
 	</head>
 <body>
     <div>
-    <form name="newCusForm">
+    <form action="https://getform.io/f/18260ddc-3705-4a49-b8e9-0fd43b915028" method="post">
         <label for="name">Name of Customer:</label>
         <input type="text" id="name" name="name" required>
         
@@ -23,8 +23,11 @@
         <label for="phone">Phone Number:</label>
         <input type="text" id="number" name="number" required>
 
-        <label for="model">Model Number of TV:</label>
-        <input type="text" id="model" name="model" required>
+        <label for="modelnum">Model Number of TV:</label>
+        <input type="text" id="modelnum" name="modelnum" required>
+
+        <label for="serialnum">Serial Number of TV:</label>
+        <input type="text" id="serialnum" name="serialnum" required>        
         
         <label for="description">Description of Problem:</label>
         <textarea id="description" name="description" required></textarea>
@@ -39,23 +42,5 @@
     <div>
         <a href="index.html">Home</a>
     </div>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxomluCtXA4men1IK8uHFMy3IGBPwdTIQUEVGtYsqNdLy1C0rS6E0UQ2pJp1zi7OD-Shg/exec'
-        const form = document.forms['newCusForm']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-              if (response.ok) {
-                alert("Form submitted successfully!");
-                form.reset();
-              } else {
-                alert("Error submitting form. Please try again later.");
-              }
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
 </body>
 </html>
