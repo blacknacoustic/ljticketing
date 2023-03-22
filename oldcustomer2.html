@@ -30,65 +30,6 @@
     <div>
         <a href="index.html">Home</a>
     </div>
-    <script type="text/javascript" src="./html/js/main.js"></script>
-    <script type="text/javascript">
-      const notion = new NotionAPI({ auth: 'secret_CCbb7H6t0SItTBroCIeNDQQQ9Du8TDSn3MKVxRrfyVh' });
-      const databaseId = '92fe5b00e63c43ccbbf6a795dd6542ff';
-
-      const searchInput = document.querySelector('#phone');
-      const searchInput2 = document.querySelector('#repairid');
-      const resultsList = document.querySelector('#results');
-
-      const form = document.querySelector('form');
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const queryPhone = searchInput.value;
-        const queryRepairId = searchInput2.value;
-
-        let response;
-
-        if (queryRepairId) {
-          response = await notion.databases.query({
-            database_id: databaseId,
-            filter: {
-              property: 'Repair ID',
-              title: {
-                contains: queryRepairId,
-              },
-            },
-          });
-        } else if (queryPhone) {
-          response = await notion.databases.query({
-            database_id: databaseId,
-            filter: {
-              property: 'Phone Number',
-              rich_text: {
-                contains: queryPhone,
-              },
-            },
-          });
-        }
-
-        renderResults(response.results);
-      });
-
-      function renderResults(results) {
-        resultsList.innerHTML = '';
-
-        results.forEach((result) => {
-          const title = result.properties['title'].title[0].plain_text;
-          const url = `https://www.notion.so/${result.id.replace(/-/g, '')}`;
-
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = url;
-          a.textContent = title;
-
-          li.appendChild(a);
-          resultsList.appendChild(li);
-        });
-      }
-    </script>
+    <script type="text/javascript" src="./js/notion.js"></script>
 </body>
 </html>
