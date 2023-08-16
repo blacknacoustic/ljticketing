@@ -5,6 +5,9 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
+        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+        
 		<title>TV Repair Form</title>
 
 		<!-- external CSS link -->
@@ -13,7 +16,7 @@
 	</head>
 <body>
     <div>
-    <form action="https://getform.io/f/18260ddc-3705-4a49-b8e9-0fd43b915028" method="post">
+    <form id="myForm">
         <label for="name">Name of Customer:</label>
         <input type="text" id="name" name="name" required>
         
@@ -42,5 +45,10 @@
     <div>
         <a href="index.html">Home</a>
     </div>
+
+  <!-- Include the Firebase SDK -->
+
+
+<script src="js/formsubmit.js"></script>
 </body>
 </html>
