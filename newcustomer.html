@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="This is where your description goes">
+    <meta name="keywords" content="one, two, three">
+    
+    <title>TV Repair Form</title>
 
-        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
-        
-		<title>TV Repair Form</title>
-
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
     <div>
-    <form id="myForm">
-        <label for="name">Name of Customer:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>        
-               
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="number" name="number" required>
+        <form id="myForm">
+            <label for="name">Name of Customer:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+                   
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="number" name="number" required>
 
-        <label for="modelnum">Model Number of TV:</label>
-        <input type="text" id="modelnum" name="modelnum" required>
+            <label for="modelnum">Model Number of TV:</label>
+            <input type="text" id="modelnum" name="modelnum" required>
 
-        <label for="serialnum">Serial Number of TV:</label>
-        <input type="text" id="serialnum" name="serialnum" required>        
-        
-        <label for="description">Description of Problem:</label>
-        <textarea id="description" name="description" required></textarea>
-        
-        <label for="items">Items Included in Drop-off:</label>
-        <input type="text" id="items" name="items">
-        
-        <button type="submit" id="newsubmit">Submit</button>
-    </form>
+            <label for="serialnum">Serial Number of TV:</label>
+            <input type="text" id="serialnum" name="serialnum" required>
+            
+            <label for="description">Description of Problem:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="items">Items Included in Drop-off:</label>
+            <input type="text" id="items" name="items">
+            
+            <button type="submit" id="newsubmit">Submit</button>
+        </form>
     </div>
     
     <div>
         <a href="index.html">Home</a>
     </div>
 
-  <!-- Include the Firebase SDK -->
-
-
-<script src="js/formsubmit.js"></script>
+    <!-- Firebase configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/formsubmit.js"></script>
+    
+    <!-- Your custom JavaScript code -->
 </body>
 </html>
