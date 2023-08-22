@@ -15,9 +15,18 @@ firebase.initializeApp(firebaseConfig);
 // Reference to the form
 const form = document.getElementById("myForm");
 
+// Reference to the Firebase database
+const database = firebase.database();
+const entryNumberRef = database.ref("entryNumber");
+
+let latestEntryNumber = 0;
+entryNumberRef.once("value", snapshot => {
+  latestEntryNumber = snapshot.val() || 0;
+});
+
 // Listen for form submission
 form.addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+  event.preventDefault();
 
   // Get form values
   const name = form.name.value;
@@ -33,6 +42,13 @@ form.addEventListener("submit", function(event) {
   const year = selectedDate.getFullYear();
   const month = selectedDate.getMonth() + 1; // JavaScript months are zero-based
 
+  // Generate a unique entry number
+  latestEntryNumber++;
+  const entryCode = `CR${latestEntryNumber.toString().padStart(6, "0")}`;
+
+  // Update the entry number in the database
+  entryNumberRef.set(latestEntryNumber);
+
   // Create an object with form data
   const formData = {
     name: name,
@@ -41,11 +57,9 @@ form.addEventListener("submit", function(event) {
     modelnum: modelnum,
     serialnum: serialnum,
     description: description,
-    items: items
+    items: items,
+    entryCode: entryCode
   };
-
-  // Reference to the Firebase database
-  const database = firebase.database();
 
   // Push form data to the database under year and month
   database.ref("repairForms").child(year).child(month).push(formData, function(error) {
@@ -53,7 +67,7 @@ form.addEventListener("submit", function(event) {
       console.error("Error saving data:", error);
     } else {
       console.log("Data saved successfully!");
-      form.reset(); // Clear the form after submission
+      form.reset();
     }
   });
 });
