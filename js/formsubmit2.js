@@ -1,22 +1,19 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCW5l3tWQaQs5on6JXrApcxJhreYBuN1LY",
-    authDomain: "ljelectronics-e94fb.firebaseapp.com",
-    projectId: "ljelectronics-e94fb",
-    storageBucket: "ljelectronics-e94fb.appspot.com",
-    messagingSenderId: "389542626733",
-    appId: "1:389542626733:web:640c57e9a28191a51c0d24",
-  };
-
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-  
+  apiKey: "AIzaSyCW5l3tWQaQs5on6JXrApcxJhreYBuN1LY",
+  authDomain: "ljelectronics-e94fb.firebaseapp.com",
+  databaseURL: "https://ljelectronics-e94fb-default-rtdb.firebaseio.com",
+  projectId: "ljelectronics-e94fb",
+  storageBucket: "ljelectronics-e94fb.appspot.com",
+  messagingSenderId: "389542626733",
+  appId: "1:389542626733:web:640c57e9a28191a51c0d24",
+  measurementId: "G-JMNYRPJBFS"
+};
 
 firebase.initializeApp(firebaseConfig);
-const firebaseApp = initializeApp(firebaseConfig);
 
 // Reference to the form
 const form = document.getElementById("myForm");
-
+  
 // Reference to the Firestore database
 const db = firebase.firestore();
 
