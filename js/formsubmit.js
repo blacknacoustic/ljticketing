@@ -9,7 +9,7 @@ const firebaseConfig = {
   measurementId: "G-JMNYRPJBFS"
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 // Reference to the form
 const form = document.getElementById("myForm");

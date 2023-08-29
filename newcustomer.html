@@ -11,14 +11,22 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-    <!-- Add other SDKs if needed -->
-    <script src="js/formsubmit.js"></script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
+    
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js'
+    
+        // Add Firebase products that you want to use
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js'
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js'
+      </script>
 </head>
 <body>
     <div>
         <form id="myForm">
+            <h2>New Customer</h2>
+
             <label for="name">Name of Customer:</label>
             <input type="text" id="name" name="name" required>
             
@@ -51,5 +59,9 @@
     <!-- Firebase configuration -->
     <!-- Include Firebase script tags -->
     <!-- Your custom JavaScript code -->
+    <!-- Include Firebase Realtime Database SDK -->
+
+    <!-- Add other SDKs if needed -->
+    <script src="/js/formsubmit.js"></script>
 </body>
 </html>
