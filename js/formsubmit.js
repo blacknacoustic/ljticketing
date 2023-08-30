@@ -1,15 +1,19 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCW5l3tWQaQs5on6JXrApcxJhreYBuN1LY",
-  authDomain: "ljelectronics-e94fb.firebaseapp.com",
-  databaseURL: "https://ljelectronics-e94fb-default-rtdb.firebaseio.com",
-  projectId: "ljelectronics-e94fb",
-  storageBucket: "ljelectronics-e94fb.appspot.com",
-  messagingSenderId: "389542626733",
-  appId: "1:389542626733:web:640c57e9a28191a51c0d24",
-  measurementId: "G-JMNYRPJBFS"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCW5l3tWQaQs5on6JXrApcxJhreYBuN1LY",
+//   authDomain: "ljelectronics-e94fb.firebaseapp.com",
+//   databaseURL: "https://ljelectronics-e94fb-default-rtdb.firebaseio.com",
+//   projectId: "ljelectronics-e94fb",
+//   storageBucket: "ljelectronics-e94fb.appspot.com",
+//   messagingSenderId: "389542626733",
+//   appId: "1:389542626733:web:640c57e9a28191a51c0d24",
+//   measurementId: "G-JMNYRPJBFS"
+// };
 
-initializeApp(firebaseConfig);
+// // Initialize Firebase
+// initializeApp(firebaseConfig);
+// const auth = getAuth(app);
+// const db = firebase.database();
+
 
 // Reference to the form
 const form = document.getElementById("myForm");
