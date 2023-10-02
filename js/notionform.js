@@ -22,7 +22,7 @@ function submitToNotion(data) {
         'Content-Type': 'application/json'
     };
 
-    axios.post('https://api.notion.com/v1/pages', requestBody, { headers })
+    axios.post('http://localhost:3000', requestBody, { headers })
         .then(response => {
             console.log('Data added to Notion:', response.data);
         })
